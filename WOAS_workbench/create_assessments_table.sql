@@ -1,9 +1,0 @@
-DROP TABLE VisualMOAS.assessments;
-CREATE TABLE VisualMOAS.assessments (
-id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-assessment_date VARCHAR(50) NOT NULL,
-rio CHAR(9) NOT NULL,
-assessor VARCHAR(50) NOT NULL,  
-topic VARCHAR(100) NOT NULL,  
-statement VARCHAR(200) NOT NULL,  
-frequency INT2 NOT NULL);
