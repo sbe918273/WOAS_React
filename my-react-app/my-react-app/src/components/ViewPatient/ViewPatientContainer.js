@@ -15,7 +15,7 @@ function ViewPatientContainer(props) {
     })
     
     const [patientInputs, setPatientInputs] = useState({
-        'rio': '123456789'
+        'rio': ''
     })
     const [scoresStatus, setScoresStatus] = useState({
         hasFailed: false,

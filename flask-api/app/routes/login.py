@@ -42,8 +42,6 @@ def login():
 
     hash, login_attempts, last_login = login_response[0]
 
-    print(datetime.utcnow() < last_login + timedelta(minutes=1))
-
     if datetime.utcnow() < last_login + timedelta(minutes=1) \
         and \
         login_attempts > 3:

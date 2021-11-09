@@ -5,4 +5,3 @@ from .register import register
 from .submit_assessment import submit_assessment
 from .add_patient import add_patient
 from .view_patient import view_patient
-from .view_patient_nivo import view_patient_nivo

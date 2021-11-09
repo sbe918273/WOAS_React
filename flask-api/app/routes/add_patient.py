@@ -13,13 +13,6 @@ def add_patient(token_data):
 
     request_json = request.get_json()
 
-    conn = mysql.connector.connect(
-        host=ADD_PATIENT_API_HOST,
-        user=ADD_PATIENT_API_USERNAME,
-        password=ADD_PATIENT_API_PASSWORD,
-        database=DATABASE
-    )
-
     # Check if the rio was provided, completely numeric, 9 digits long, and where it already exists in the patients table.
     try: 
 
@@ -48,7 +41,7 @@ def add_patient(token_data):
 
         return jsonify({'success': False, 'error': 'The admission date provided was invalid!'}), 400
 
-    # For each name provided in the request, check if it exists (otherwise insert None into the patients table) and then if
+    # For each name provided in the request, check if it exists (otherwise insert NULL into the patients table) and then if
     # it is completely alphabetic. If it is, add the capitalized version to the names dict to be inserted into the patients table. 
 
     names = {}
@@ -64,7 +57,14 @@ def add_patient(token_data):
     except:
         return jsonify({'success': False, 'error': 'All of the patient\'s names were not provided (leave as "" for blank)'}), 400
 
-    # Inserts the patient's provided info into the patients table.
+    # Insert the patient's provided info into the patients table.
+    conn = mysql.connector.connect(
+        host=ADD_PATIENT_API_HOST,
+        user=ADD_PATIENT_API_USERNAME,
+        password=ADD_PATIENT_API_PASSWORD,
+        database=DATABASE
+    )
+
     insert_patient_query = """INSERT INTO {} (
         rio,
         admission_date,
@@ -89,3 +89,4 @@ def add_patient(token_data):
     conn.close()
 
     return jsonify({'success': True})
+    

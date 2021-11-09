@@ -28,7 +28,7 @@ ASSESSMENTS_TABLE = 'assessments'
 PATIENTS_TABLE = 'patients'
 
 DATABASE = 'VisualMOAS'
-SECRET_KEY = 'thisisthesecretkey'
+SECRET_KEY = ''
 
 TOKEN_REQUIREMENTS = {
     '/register': 0,

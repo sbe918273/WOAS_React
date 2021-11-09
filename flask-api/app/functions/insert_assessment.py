@@ -1,6 +1,6 @@
 from flask import jsonify
-from app.config import ASSESSMENTS_TABLE, PATIENTS_TABLE, USERS_TABLE, CRITERIA_TABLE
-from app.functions import check_frequency, check_criteria_match, do_select_query
+from app.config import ASSESSMENTS_TABLE
+from app.functions import check_frequency
 
 def insert_assessment(conn, assessment_date, rio, assessor, topic, statement, frequency):
 

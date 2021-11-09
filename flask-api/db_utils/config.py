@@ -1,6 +1,6 @@
 UTILS_HOST = 'localhost'
-UTILS_USERNAME = 'VisualMOAS_utils'
+UTILS_USERNAME = 'WOAS_utils'
 UTILS_PASSWORD = ''
 
-DATABASE = 'VisualMOAS'
+DATABASE = 'WOAS'
 CRITERIA_TABLE = 'criteria'

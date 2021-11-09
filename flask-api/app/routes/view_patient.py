@@ -10,19 +10,19 @@ from app.functions import do_select_query
 @token_required(required_group_id=0)
 def view_patient(data):
 
-    conn = mysql.connector.connect(
-        host=VIEW_PATIENT_API_HOST,
-        user=VIEW_PATIENT_API_USERNAME,
-        password=VIEW_PATIENT_API_PASSWORD,
-        database=DATABASE
-    )
-
     request_json = request.get_json()
 
     try:
         rio = request_json['rio']
     except KeyError:
         return jsonify({'success': False, 'error': 'No rio provided!'}), 400
+
+    conn = mysql.connector.connect(
+        host=VIEW_PATIENT_API_HOST,
+        user=VIEW_PATIENT_API_USERNAME,
+        password=VIEW_PATIENT_API_PASSWORD,
+        database=DATABASE
+    )
 
     patient_response = do_select_query(
         conn, 
@@ -94,7 +94,7 @@ def view_patient(data):
         if select_statement_response is None:
             return jsonify({
                 'success': False, 
-                'error': 'None, or more than one, rows recieved for statement "{0}" in topic "{1}"!'.format(
+                'error': 'None or more than one rows recieved for statement "{0}" in topic "{1}"!'.format(
                     statement, topic
                 )
             }), 400

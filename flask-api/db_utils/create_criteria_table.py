@@ -17,7 +17,7 @@ except:
     pass
 
 cursor.execute("""
-    CREATE TABLE VisualMOAS.criteria (
+    CREATE TABLE WOAS.criteria (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
     topic VARCHAR(100) NOT NULL, 
     topic_weight REAL(6, 4), 

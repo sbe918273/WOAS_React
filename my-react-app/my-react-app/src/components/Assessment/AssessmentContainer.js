@@ -197,7 +197,7 @@ function AssessmentContainer(props) {
     function handleSubmit() {
 
         /* 
-            Iterate recurivsely through the criteriaInputs object. If any values for the frequency of any statements is null,
+            Recurivse through the criteriaInputs object. If any values for the frequency of any statements is null,
             (i.e. the default value) that statement has not been checked and the inputs are thus not valid.
         */
 

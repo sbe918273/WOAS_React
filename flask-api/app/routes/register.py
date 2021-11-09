@@ -26,7 +26,7 @@ def register(token_data):
 
     except KeyError:
 
-        return jsonify({'success': False, 'error': 'Fill in all the boxes!'})
+        return jsonify({'success': False, 'error': 'Insufficient information provided.'})
 
     conn = mysql.connector.connect(
         host=REGISTER_API_HOST,

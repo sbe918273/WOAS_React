@@ -7,8 +7,8 @@ function LoginContainer(props) {
     const history = useHistory()
 
     const [loginFormInputs, setLoginFormInputs] = useState({
-        username: "admin",
-        password: "areyoudaftnigela2812"
+        username: "",
+        password: ""
       })
 
     const [loginStatus, setLoginStatus] = useState({
@@ -31,7 +31,7 @@ function LoginContainer(props) {
         /*
             Sends POST authentication request to login API with username and password 
             parameters found in the loginFormInputs state.
-            The data received is sent to the handleLoginResponse function
+            The data received is sent to the handleLoginResponse function.
         */
 
         event.preventDefault()
@@ -53,8 +53,6 @@ function LoginContainer(props) {
             an authorization POST request is sent regarding the referrer to the login (or the assessment page if the
             referrer is blank).
         */
-
-        console.log(data)
 
         setLoginFormInputs(prevLoginFormInputs => ({
             ...prevLoginFormInputs,
